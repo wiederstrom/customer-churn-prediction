@@ -27,17 +27,16 @@ xgb_parameters={
 
 }
 
-svm_parameters={
-    'kernels': ['linear', 'rbf', 'poly'],
-    'gammas': [0.1, 1, 10, 100],
-    'C': [0.1, 1, 10, 100, 1000],
-    'degrees': [0, 1, 2, 3, 4, 5, 6]
-
+svm_parameters = {
+    'kernel': ['linear', 'rbf', 'poly'],
+    'gamma': [0.1, 1, 10],
+    'C': [0.1, 1, 10],
+    'degree': [2, 3, 4]
 }
 
 rf_model = RandomForestClassifier(random_state=42)
 xgb_model = XGBClassifier()
-svm_model = svm.SVC()
+svm_model = SVC()
 
 
 
@@ -57,7 +56,9 @@ models = {
 }
 
 
-for name, (model, params) in models.items():
+for name, config in models.items():
+    model = config['model']
+    params = config['param']
     print(f"\nRunning GridSearchCV for: {name}")
     grid = run_grid_search(model, params, X_train, y_train)
 
