@@ -23,7 +23,7 @@ def run_grid_search(model, param_grid, X_train, y_train, cv=5, scoring='f1'):
         scoring=scoring,
         cv=cv,
         n_jobs=-1,
-        verbose=2
+        verbose=0
     )
     grid_search.fit(X_train, y_train)
     return grid_search

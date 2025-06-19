@@ -43,12 +43,13 @@ customer-churn-prediction/
 │   └── raw/WA_Fn-UseC_-Telco-Customer-Churn.csv
 ├── notebooks/
 │   ├── 01_exploration.ipynb
-│   └── 02_model_evaluation.ipynb
+│   └── 02_model_training.ipynb
+    └── 03_model_evaluation.ipynb
 ├── outputs/
 │   └── models/  # Saved .pkl model files
 ├── src/
 │   ├── features/feature_engineering.py
-│   ├── models/GridCV_all_model.py
+│   ├── models/
 │   └── utils/
 │       ├── split_data.py
 │       └── model_helpers.py
